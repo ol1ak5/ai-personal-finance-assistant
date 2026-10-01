@@ -1,11 +1,8 @@
 # 💰 AI Personal Finance Assistant
-### *See the patterns behind your spending* · *Apps for Your Life*
 
----
+Open the [live app](https://your-ai-personal-finance-assistant.streamlit.app) to explore your spending patterns with an interactive dashboard that turns raw transactions into clear, actionable insights. 
 
-## 🚀 See it in action
-
-Open the [live app](https://your-ai-personal-finance-assistant.streamlit.app) to explore your spending patterns instantly with an interactive dashboard that turns raw transactions into clear, actionable insights. 
+![Landing screen](docs/screenshots/landing.png)
 
 ## 🎯 The Problem
 
@@ -24,6 +21,13 @@ AI Personal Finance Assistant transforms raw transaction data into clear spendin
 | **See change over time** | Compare the last month, three months, six months, or your full history without redefining the underlying patterns |
 | **Use the app anywhere** | Explore your spending patterns comfortably on a computer, tablet, or mobile phone |
 | **Keep your data private** | Files are processed in memory and never stored. AI receives only aggregated pattern evidence. Never raw transaction history |
+
+## 📸 Screenshots
+
+| | |
+|---|---|
+| ![Spending overview](docs/screenshots/overview.png) | ![Charts](docs/screenshots/charts.png) |
+| ![Patterns in detail](docs/screenshots/patterns.png) | ![AI summary](docs/screenshots/ai-summary.png) |
 
 ## 🚀 Quick Start
 
@@ -58,20 +62,20 @@ Visit **[your-ai-personal-finance-assistant.streamlit.app](https://your-ai-perso
 
 ## 🧠 How Codex Contributed to The Final Result
 
-- **Product development** - Codex turned the initial idea into a finished personal-finance product.
-- **Engineering** - Codex helped to write and improve the code behind the Streamlit app, and detect the bugs.
-- **Accuracy & consistency** - Codex tracked changes across code and documentation, keeping updates synchronized, and reducing the risk of inconsistencies as the project evolved.
-- **App design** - Codex supported continuous design iteration across the dashboard layout, charts, responsive desktop/mobile experience.
-- **Demo data** - Codex helped to create a realistic demo dataset to showcase features without using sensitive data.
-- **Project delivery** - Codex helped to prepare the README, licence, repository structure, etc.
+- **Product development.** Codex turned the initial idea into a finished personal-finance product.
+- **Engineering.** Codex helped to write and improve the code behind the Streamlit app, and detect the bugs.
+- **Accuracy & consistency.** Codex tracked changes across code and documentation, keeping updates synchronized, and reducing the risk of inconsistencies as the project evolved.
+- **App design.** Codex supported continuous design iteration across the dashboard layout, charts, responsive desktop/mobile experience.
+- **Demo data.** Codex helped to create a realistic demo dataset to showcase features without using sensitive data.
+- **Project delivery.** Codex helped to prepare the README, licence, repository structure, etc.
 
 ## 🏆 How GPT-5.6 Shaped the Product
 
-- **Pattern labels** - GPT-5.6 turns the raw evidence into meaningful labels based on spending frequency, typical amount, and consistency.
-- **Spending summary** - GPT-5.6 translates the analysis into five practical insights: the biggest change, subscriptions, recurring habits, one-off expenses, and items worth a closer look.
-- **Clear language** - GPT-5.6 presents insights in natural, conversational language instead of technical terminology.
-- **Currency-aware results** - GPT-5.6 uses the currency detected from the uploaded statement so amounts are presented in the user’s original currency.
-- **Natural merchant names** - GPT-5.6 makes merchant references human-friendly instead of repeating raw bank-statement descriptions.
+- **Pattern label.** GPT-5.6 turns the raw evidence into meaningful labels based on spending frequency, typical amount, and consistency.
+- **Spending summary.** GPT-5.6 translates the analysis into five practical insights: the biggest change, subscriptions, recurring habits, one-off expenses, and items worth a closer look.
+- **Clear language.** GPT-5.6 presents insights in natural, conversational language instead of technical terminology.
+- **Currency-aware results.** GPT-5.6 uses the currency detected from the uploaded statement so amounts are presented in the user’s original currency.
+- **Natural merchant names.** GPT-5.6 makes merchant references human-friendly instead of repeating raw bank-statement descriptions.
 
 ## 🎥 Demo Video
 
