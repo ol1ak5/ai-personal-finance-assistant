@@ -2,7 +2,7 @@
 
 Open the [live app](https://your-ai-personal-finance-assistant.streamlit.app) to explore your spending patterns with an interactive dashboard that turns raw transactions into clear, actionable insights. 
 
-![Landing screen](docs/screenshot-landing.png)
+![Spending overview](docs/screenshot-overview.png)
 
 ## 🎯 The Problem
 
@@ -12,7 +12,7 @@ Bank statements hide more than they show. They tell you every transaction, but 
 
 AI Personal Finance Assistant transforms raw transaction data into clear spending insights. By combining machine learning with GPT-5.6, it discovers meaningful spending patterns and explains them in plain English, helping you to understand your spending in just a few seconds.
 
-![Spending overview](docs/screenshot-overview.png)
+![Spending charts](docs/screenshot-charts.png)
 
 ## ✨ Core Features
 
