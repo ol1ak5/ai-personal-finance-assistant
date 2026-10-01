@@ -16,13 +16,11 @@ AI Personal Finance Assistant transforms raw transaction data into clear spendin
 
 ## ✨ Core Features
 
-| Feature | Description |
-|---|---|
-| **Reveal the habits behind the transactions** | The app identifies up to five spending patterns using frequency, typical amount, timing, and consistency, not merchant names alone |
-| **Turn data into a clear story** | GPT-5.6 gives each pattern a meaningful label and writes a plain-English summary |
-| **See change over time** | Compare the last month, three months, six months, or your full history without redefining the underlying patterns |
-| **Use the app anywhere** | Explore your spending patterns comfortably on a computer, tablet, or mobile phone |
-| **Keep your data private** | Files are processed in memory and never stored. AI receives only aggregated pattern evidence. Never raw transaction history |
+- **Reveal the habits behind the transactions.** The app identifies up to five spending patterns using frequency, typical amount, timing, and consistency, not merchant names alone.
+- **Turn data into a clear story.** GPT-5.6 gives each pattern a meaningful label and writes a plain-English summary.
+- **See change over time.** Compare the last month, three months, six months, or your full history without redefining the underlying patterns.
+- **Use the app anywhere.** Explore your spending patterns comfortably on a computer, tablet, or mobile phone.
+- **Keep your data private.** Files are processed in memory and never stored. AI receives only aggregated pattern evidence. Never raw transaction history.
 
 ![Patterns in detail](docs/screenshot-patterns.png)
 
@@ -77,8 +75,6 @@ Visit **[your-ai-personal-finance-assistant.streamlit.app](https://your-ai-perso
 | **Clear language** | GPT-5.6 presents insights in natural, conversational language instead of technical terminology |
 | **Currency-aware results** | GPT-5.6 uses the currency detected from the uploaded statement so amounts are presented in the user’s original currency |
 | **Natural merchant names** | GPT-5.6 makes merchant references human-friendly instead of repeating raw bank-statement descriptions |
-
-![AI summary](docs/screenshot-summary.png)
 
 ## 🎥 Demo Video
 
