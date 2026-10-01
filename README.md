@@ -88,7 +88,15 @@ The demo covers:
 
 ## 🧩 Built With
 
-**OpenAI GPT-5.6** · **Python 3.11** · **Streamlit** · **Pandas** · **scikit-learn** · **Plotly** · **pytest**
+| Stack | Used for |
+|---|---|
+| **OpenAI GPT-5.6** | Naming spending patterns and writing the plain-English summary |
+| **Python 3.11** | Core application language |
+| **Streamlit** | Interactive dashboard UI |
+| **Pandas** | Parsing and aggregating transaction data |
+| **scikit-learn** | Clustering transactions into spending patterns |
+| **Plotly** | Charts: cumulative spending, pattern breakdown, monthly totals |
+| **pytest** | Automated test suite |
 
 ## 📄 License
 
