@@ -1278,7 +1278,16 @@ if raw_df is not None:
         )
 
         st.subheader("What GPT-5.6 sees in your spending", anchor=False)
-        st.markdown(summary_text)
+        # The summary items get a little air between them, and the page
+        # ends with generous space instead of stopping right at the last one.
+        st.markdown(
+            "<style>.st-key-ai-summary li{margin-bottom:0.6rem;"
+            "line-height:1.6;}</style>",
+            unsafe_allow_html=True,
+        )
+        with st.container(key="ai-summary"):
+            st.markdown(summary_text)
+        st.space(120)
     except Exception as error:
         st.error(
             "Something unexpected happened while analyzing this file. "
