@@ -2,12 +2,18 @@
 maxUploadSize = 5
 
 [theme]
-base = "dark"
-font = "sans serif"
-primaryColor = "#7C3AED"
-backgroundColor = "#0B0714"
-secondaryBackgroundColor = "#1B1229"
-textColor = "#F8F7FF"
-borderColor = "#3C2E5A"
-chartCategoricalColors = ["#7C3AED", "#A78BFA", "#C4B5FD", "#E9D5FF", "#D946EF"]
+base = "light"
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+headingFont = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+headingFontWeights = [700, 700, 700, 700, 700, 700]
+primaryColor = "#0A0A0A"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F8F8F8"
+textColor = "#0A0A0A"
+borderColor = "#E6E6E6"
+grayTextColor = "#8A8A8A"
+linkColor = "#0A0A0A"
+chartCategoricalColors = ["#2F4D6A", "#587A9D", "#88AECF", "#A9C8E6", "#C8E0F4"]
 baseRadius = "0.75rem"
+buttonRadius = "full"
+metricValueFontSize = "2rem"
