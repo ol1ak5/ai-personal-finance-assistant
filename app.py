@@ -38,7 +38,9 @@ CURRENCY_MARKERS = {
 }
 
 
-@st.cache_data(show_spinner="Asking GPT-5.6 for analysis…", ttl="24h")
+# The GPT calls show their progress next to the period selector instead of
+# Streamlit's default cache spinner (see period_status below).
+@st.cache_data(show_spinner=False, ttl="24h")
 def cached_analysis(stats_json: str, period_json: str, prompt_fingerprint: str) -> dict:
     """One GPT-5.6 call per unique dataset: identical inputs (any rerun,
     any visitor) reuse the cached result instead of paying for a new call.
@@ -47,7 +49,7 @@ def cached_analysis(stats_json: str, period_json: str, prompt_fingerprint: str) 
     return llm.analyze_clusters(json.loads(stats_json), json.loads(period_json))
 
 
-@st.cache_data(show_spinner="Asking GPT-5.6 for a summary…", ttl="24h")
+@st.cache_data(show_spinner=False, ttl="24h")
 def cached_summary(
     stats_json: str, period_json: str, recurring_json: str, prompt_fingerprint: str
 ) -> str:
@@ -630,7 +632,16 @@ st.markdown(
     "font-weight:400;letter-spacing:-0.01em;font-size:1.12em;}"
     ".hero-lead{text-align:center;font-size:1.12rem;line-height:1.65;"
     "color:#6B6B6B;max-width:600px;margin:1.6rem auto 2.4rem !important;}"
-    ".st-key-hero-actions button{padding:0.75rem 1.9rem;font-weight:600;}"
+    ".st-key-hero-actions button{padding:0.75rem 1.9rem;font-weight:600;"
+    "transition:transform .15s ease, box-shadow .15s ease, background .15s ease;}"
+    # Both hero buttons answer the same way: they lift on hover and press
+    # in on click. The black demo button also lightens slightly on hover,
+    # since a darker black would not show.
+    ".st-key-hero-actions button:hover{transform:translateY(-1px);"
+    "box-shadow:0 6px 16px rgba(0,0,0,.12);}"
+    ".st-key-hero-actions button:active{transform:scale(.97);"
+    "box-shadow:0 2px 6px rgba(0,0,0,.10);}"
+    ".st-key-hero-actions button[kind='primary']:hover{background:#2A2A2A;}"
     ".hero-note{text-align:center;font-size:0.75rem !important;color:#8A8A8A;"
     "margin:2rem 0 0 !important;}"
     "</style>",
@@ -919,17 +930,29 @@ if raw_df is not None:
             ".st-key-period [role='radio'][aria-checked='true']{"
             "background:#0A0A0A !important;color:#FFFFFF !important;"
             "box-shadow:0 2px 8px rgba(0,0,0,.15);}"
+            # The GPT progress line beside the selector uses the caption
+            # style of "AI-generated classifications…".
+            ".st-key-period-status [data-testid='stSpinner'],"
+            ".st-key-period-status [data-testid='stSpinner'] *"
+            "{font-size:0.875rem !important;color:rgba(10,10,10,.6) !important;}"
+            # Bottom-aligned with the pills, then lifted to their centre line.
+            ".st-key-period-status{padding-bottom:9px;}"
             "</style>",
             unsafe_allow_html=True,
         )
-        period_choice = st.segmented_control(
-            "Analysis period",
-            options=["1 month", "3 months", "6 months", "All history"],
-            default="3 months",
-            selection_mode="single",
-            width="content",
-            key="period",
-        )
+        with st.container(
+            horizontal=True, vertical_alignment="bottom", gap="medium"
+        ):
+            period_choice = st.segmented_control(
+                "Analysis period",
+                options=["1 month", "3 months", "6 months", "All history"],
+                default="3 months",
+                selection_mode="single",
+                width="content",
+                key="period",
+            )
+            # Filled only while a GPT call is running (see below).
+            period_status = st.container(key="period-status")
         transactions = all_transactions
         if period_choice != "All history":
             selected_months = int(period_choice.split()[0])
@@ -993,11 +1016,14 @@ if raw_df is not None:
         used_ai = False
         if llm.is_configured():
             try:
-                analysis = cached_analysis(
-                    json.dumps(stats_for_ai, sort_keys=True),
-                    json.dumps(source_period, sort_keys=True),
-                    hashlib.sha256(llm.ANALYSIS_SYSTEM.encode()).hexdigest()[:12],
-                )
+                # st.spinner only appears after a short delay, so a cached
+                # answer returns without any flash.
+                with period_status, st.spinner("Asking GPT-5.6 for analysis…"):
+                    analysis = cached_analysis(
+                        json.dumps(stats_for_ai, sort_keys=True),
+                        json.dumps(source_period, sort_keys=True),
+                        hashlib.sha256(llm.ANALYSIS_SYSTEM.encode()).hexdigest()[:12],
+                    )
                 used_ai = True
             except Exception as error:
                 # Any AI/network failure (bad key, no billing, rate limit, timeout,
@@ -1033,12 +1059,13 @@ if raw_df is not None:
                 {**item, "name": names[item["cluster_id"]]} for item in stats
             ]
             try:
-                summary_text = cached_summary(
-                    json.dumps(stats_for_summary, sort_keys=True),
-                    json.dumps(period, sort_keys=True),
-                    json.dumps(features.recurring_charges(feats), sort_keys=True),
-                    hashlib.sha256(llm.SUMMARY_SYSTEM.encode()).hexdigest()[:12],
-                )
+                with period_status, st.spinner("Asking GPT-5.6 for a summary…"):
+                    summary_text = cached_summary(
+                        json.dumps(stats_for_summary, sort_keys=True),
+                        json.dumps(period, sort_keys=True),
+                        json.dumps(features.recurring_charges(feats), sort_keys=True),
+                        hashlib.sha256(llm.SUMMARY_SYSTEM.encode()).hexdigest()[:12],
+                    )
             except Exception as error:
                 ai_error = ai_error or str(error)
                 logger.warning("AI summary failed, using local fallback: %s", error)
