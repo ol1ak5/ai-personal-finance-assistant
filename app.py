@@ -808,12 +808,19 @@ if raw_df is None:
         # On phones the sheet scrolls, so the badge needs room below the
         # Streamlit top bar.
         "@media (max-width:640px){[data-testid='stMainBlockContainer']"
-        "{padding-top:4.5rem !important;}}"
+        "{padding-top:4rem !important;}"
+        # Phones stack the steps, so the gaps tighten to bring the flow up.
+        ".hero-lead{font-size:1rem;margin:1rem auto 1.4rem !important;}"
+        ".hero-note{margin-top:0.25rem !important;}"
+        ".flow-head{margin:2rem 0 1.2rem !important;"
+        "font-size:1.3rem !important;}"
+        ".flow{gap:8px !important;}.flow-line{height:14px !important;}}"
         "</style>"
         "<div class='landing-only'>"
         "<hr style='border:none;border-top:1px solid #E6E6E6;margin:0 auto;"
         "max-width:860px;'>"
-        "<h3 style='text-align:center;margin:3rem 0 1.6rem;font-size:1.7rem;'>"
+        "<h3 class='flow-head' style='text-align:center;margin:3rem 0 1.6rem;"
+        "font-size:1.7rem;'>"
         "From bank export to clear story</h3></div>",
         unsafe_allow_html=True,
     )
