@@ -338,8 +338,13 @@ def how_it_works_html() -> str:
         ".flow-step .ftitle{font-size:17px;font-weight:600;"
         "letter-spacing:-0.01em;color:#0A0A0A;}"
         ".flow-line{width:56px;height:1px;background:#BDBDBD;}"
-        "@media (max-width:640px){.flow{flex-direction:column;gap:12px;}"
-        ".flow-line{width:1px;height:22px;}}"
+        # On phones the steps stay in one row, each number above its title,
+        # so the flow fits on the first screen.
+        "@media (max-width:640px){.flow{align-items:flex-start;gap:0;}"
+        ".flow-step{flex-direction:column;gap:8px;width:92px;text-align:center;}"
+        ".flow-step .num{width:30px;height:30px;font-size:13px;}"
+        ".flow-step .ftitle{font-size:14px;line-height:1.3;}"
+        ".flow-line{flex:none;width:28px;margin-top:15px;}}"
         "</style>"
         f"<div class='flow'>{steps}</div>"
     )
@@ -807,14 +812,22 @@ if raw_df is None:
         "{flex:0 0 auto;margin-top:auto;margin-bottom:auto;}"
         # On phones the sheet scrolls, so the badge needs room below the
         # Streamlit top bar.
+        # Streamlit adds a hidden link icon after headings, which pushes
+        # the centred flow title off centre.
+        ".flow-head [data-testid='stHeaderActionElements']{display:none;}"
+        # Phones measure the visible height (dvh), since 100vh in mobile
+        # Safari includes the space under its toolbars.
         "@media (max-width:640px){[data-testid='stMainBlockContainer']"
-        "{padding-top:4rem !important;}"
-        # Phones stack the steps, so the gaps tighten to bring the flow up.
-        ".hero-lead{font-size:1rem;margin:1rem auto 1.4rem !important;}"
-        ".hero-note{margin-top:0.25rem !important;}"
-        ".flow-head{margin:2rem 0 1.2rem !important;"
-        "font-size:1.3rem !important;}"
-        ".flow{gap:8px !important;}.flow-line{height:14px !important;}}"
+        "{min-height:100dvh;padding-top:3.75rem !important;"
+        "padding-bottom:2.5rem !important;}"
+        # Tighter gaps keep the whole sheet within a phone screen.
+        ".hero-title{font-size:2.15rem;margin-top:1.3rem;}"
+        ".hero-lead{font-size:0.95rem;line-height:1.55;"
+        "margin:0.9rem auto 1rem !important;}"
+        ".hero-note{margin-top:-0.5rem !important;}"
+        ".landing-only{margin-top:-1.75rem;}"
+        ".flow-head{margin:1.25rem 0 0.9rem !important;"
+        "font-size:1.3rem !important;}}"
         "</style>"
         "<div class='landing-only'>"
         "<hr style='border:none;border-top:1px solid #E6E6E6;margin:0 auto;"
