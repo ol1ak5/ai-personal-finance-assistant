@@ -818,15 +818,15 @@ if raw_df is None:
         # Phones measure the visible height (dvh), since 100vh in mobile
         # Safari includes the space under its toolbars.
         "@media (max-width:640px){[data-testid='stMainBlockContainer']"
-        "{min-height:100dvh;padding-top:3.75rem !important;"
+        "{min-height:100dvh;padding-top:3.25rem !important;"
         "padding-bottom:2.5rem !important;}"
         # Tighter gaps keep the whole sheet within a phone screen.
-        ".hero-title{font-size:2.15rem;margin-top:1.3rem;}"
+        ".hero-title{font-size:2.15rem;margin-top:1rem;}"
         ".hero-lead{font-size:0.95rem;line-height:1.55;"
-        "margin:0.9rem auto 1rem !important;}"
+        "margin:0.75rem auto 0.9rem !important;}"
         ".hero-note{margin-top:-0.5rem !important;}"
-        ".landing-only{margin-top:-1.75rem;}"
-        ".flow-head{margin:1.25rem 0 0.9rem !important;"
+        ".landing-only{margin-top:-2.25rem;}"
+        ".flow-head{margin:1.1rem 0 0.8rem !important;"
         "font-size:1.3rem !important;}}"
         "</style>"
         "<div class='landing-only'>"
