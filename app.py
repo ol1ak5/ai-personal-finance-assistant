@@ -1182,6 +1182,8 @@ if raw_df is not None:
         monthly_box.markdown(f"**Monthly spending{currency_unit}**")
         monthly_box.plotly_chart(figs["monthly"], width="stretch")
 
+        # Each lower section starts with the same extra breathing room.
+        st.space(16)
         st.subheader("Patterns in detail", anchor=False)
         st.caption(
             "Merchants are grouped by spending behaviour, such as frequency, typical "
@@ -1267,6 +1269,7 @@ if raw_df is not None:
             unsafe_allow_html=True,
         )
 
+        st.space(16)
         st.subheader("Merchant habits", anchor=False)
         st.caption("Your spending habits, merchant by merchant.")
         st.markdown(
@@ -1277,6 +1280,7 @@ if raw_df is not None:
             unsafe_allow_html=True,
         )
 
+        st.space(16)
         st.subheader("What GPT-5.6 sees in your spending", anchor=False)
         # The summary items get a little air between them, and the page
         # ends with generous space instead of stopping right at the last one.
@@ -1287,7 +1291,7 @@ if raw_df is not None:
         )
         with st.container(key="ai-summary"):
             st.markdown(summary_text)
-        st.space(120)
+        st.space(64)
     except Exception as error:
         st.error(
             "Something unexpected happened while analyzing this file. "
