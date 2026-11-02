@@ -1,20 +1,18 @@
-# 💰 AI Personal Finance Assistant
+# AI Personal Finance Assistant
 
 Open the [live app](https://your-ai-personal-finance-assistant.streamlit.app) to explore your spending patterns with an interactive dashboard that turns raw transactions into clear, actionable insights. 
 
+**[Watch the Demo on YouTube](https://youtu.be/_VLKwRPPVik)**
+
 ![Spending overview](docs/screenshot-overview.png)
 
-## 🎯 The Problem
+## Why It Matter?
 
-Bank statements hide more than they show. They tell you every transaction, but not the story behind your spending. Recurring subscriptions, everyday purchases, and hidden spending patterns are buried in hundreds of line items, making it difficult to understand where your money actually goes.
-
-## 💡 The Solution
-
-AI Personal Finance Assistant transforms raw transaction data into clear spending insights. By combining machine learning with GPT-5.6, it discovers meaningful spending patterns and explains them in plain English, helping you to understand your spending in just a few seconds.
+Bank statements hide more than they show. Recurring subscriptions, everyday purchases, and hidden spending patterns are buried in hundreds of line items, making it difficult to understand where your money actually goes. AI Personal Finance Assistant transforms raw transaction data into clear spending insights, helping you to understand your spending in just a few seconds.
 
 ![Spending charts](docs/screenshot-charts.png)
 
-## ✨ Core Features
+## Core Features
 
 - **Reveal the habits behind the transactions.** The app identifies up to five spending patterns using frequency, typical amount, timing, and consistency, not merchant names alone.
 - **Turn data into a clear story.** GPT-5.6 gives each pattern a meaningful label and writes a plain-English summary.
@@ -22,9 +20,7 @@ AI Personal Finance Assistant transforms raw transaction data into clear spendin
 - **Use the app anywhere.** Explore your spending patterns comfortably on a computer, tablet, or mobile phone.
 - **Keep your data private.** Files are processed in memory and never stored. AI receives only aggregated pattern evidence. Never raw transaction history.
 
-![Patterns in detail](docs/screenshot-patterns.png)
-
-## 🚀 Quick Start
+## Quick Start
 
 ### Local Development
 
@@ -55,7 +51,7 @@ MOCK_LLM=true uv run pytest tests/test_llm.py::test_summary_with_question_reject
 
 Visit **[your-ai-personal-finance-assistant.streamlit.app](https://your-ai-personal-finance-assistant.streamlit.app)**. The app redeploys automatically when changes are pushed to `main`. Its `OPENAI_API_KEY` is securely configured in Streamlit Cloud Secrets.
 
-## 🧠 How Codex Contributed to The Final Result
+## How Codex Contributed to The Final Result
 
 | Area | Contribution |
 |---|---|
@@ -66,7 +62,7 @@ Visit **[your-ai-personal-finance-assistant.streamlit.app](https://your-ai-perso
 | **Demo data** | Codex helped to create a realistic demo dataset to showcase features without using sensitive data |
 | **Project delivery** | Codex helped to prepare the README, licence, repository structure, etc |
 
-## 🏆 How GPT-5.6 Shaped the Product
+## How GPT-5.6 Shaped the Product
 
 | Area | Contribution |
 |---|---|
@@ -75,28 +71,6 @@ Visit **[your-ai-personal-finance-assistant.streamlit.app](https://your-ai-perso
 | **Clear language** | GPT-5.6 presents insights in natural, conversational language instead of technical terminology |
 | **Currency-aware results** | GPT-5.6 uses the currency detected from the uploaded statement so amounts are presented in the user’s original currency |
 | **Natural merchant names** | GPT-5.6 makes merchant references human-friendly instead of repeating raw bank-statement descriptions |
-
-## 🎥 Demo Video
-
-📺 **[Watch the Demo on YouTube](https://youtu.be/_VLKwRPPVik)**
-
-The demo covers:
-- The hidden-spending problem and why it matters
-- How Codex was used in the development workflow
-- Why pairing statistical clustering with GPT-5.6 is the right approach
-- Live walk through with synthetic demo data (patterns, spending habits, AI summary)
-
-## 🧩 Built With
-
-| Stack | Used for |
-|---|---|
-| **OpenAI GPT-5.6** | Naming spending patterns and writing the plain-English summary |
-| **Python 3.11** | Core application language |
-| **Streamlit** | Interactive dashboard UI |
-| **Pandas** | Parsing and aggregating transaction data |
-| **scikit-learn** | Clustering transactions into spending patterns |
-| **Plotly** | Charts: cumulative spending, pattern breakdown, monthly totals |
-| **pytest** | Automated test suite |
 
 ## 📄 License
 
