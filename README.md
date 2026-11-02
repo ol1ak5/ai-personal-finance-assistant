@@ -6,7 +6,7 @@ Open the [live app](https://your-ai-personal-finance-assistant.streamlit.app) to
 
 ![Spending overview](docs/screenshot-overview.png)
 
-## Why It Matter?
+## Why It Matters
 
 Bank statements hide more than they show. Recurring subscriptions, everyday purchases, and hidden spending patterns are buried in hundreds of line items, making it difficult to understand where your money actually goes. AI Personal Finance Assistant transforms raw transaction data into clear spending insights, helping you to understand your spending in just a few seconds.
 
