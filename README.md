@@ -1,6 +1,6 @@
 # AI Personal Finance Assistant
 
-Open the [live app](https://your-ai-personal-finance-assistant.streamlit.app) to explore your spending patterns with an interactive dashboard that turns raw transactions into clear, actionable insights. Watch the Demo on **[YouTube](https://youtu.be/_VLKwRPPVik)**
+Open the [live app](https://your-ai-personal-finance-assistant.streamlit.app) to explore your spending patterns with an interactive dashboard that turns raw transactions into clear, actionable insights. Watch the Demo on **[YouTube](https://youtu.be/_VLKwRPPVik)**.
 
 > **Track:** Apps for Your Life – OpenAI Build Week 2026
 
@@ -9,8 +9,6 @@ Open the [live app](https://your-ai-personal-finance-assistant.streamlit.app) to
 ## Why It Matters
 
 Bank statements hide more than they show. Recurring subscriptions, everyday purchases, and hidden spending patterns are buried in hundreds of line items, making it difficult to understand where your money actually goes. AI Personal Finance Assistant transforms raw transaction data into clear spending insights, helping you to understand your spending in just a few seconds.
-
-![Spending charts](docs/screenshot-charts.png)
 
 ## Core Features
 
