@@ -1,8 +1,8 @@
 # AI Personal Finance Assistant
 
-Open the [live app](https://your-ai-personal-finance-assistant.streamlit.app) to explore your spending patterns with an interactive dashboard that turns raw transactions into clear, actionable insights. 
+Open the [live app](https://your-ai-personal-finance-assistant.streamlit.app) to explore your spending patterns with an interactive dashboard that turns raw transactions into clear, actionable insights. Watch the Demo on **[YouTube](https://youtu.be/_VLKwRPPVik)**
 
-**[Watch the Demo on YouTube](https://youtu.be/_VLKwRPPVik)**
+> **Track:** Apps for Your Life – OpenAI Build Week 2026
 
 ![Spending overview](docs/screenshot-overview.png)
 
@@ -78,4 +78,4 @@ Copyright © 2026 Olga Aksenova.
 
 The code in this repository is licensed under the **[Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)** – see [LICENSE](LICENSE) for the full text.
 
-*Built for OpenAI Build Week · Apps for Your Life*
+*Built for OpenAI Build Week*
