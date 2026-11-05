@@ -8,7 +8,7 @@ Open the [live app](https://your-ai-personal-finance-assistant.streamlit.app) to
 
 ## Why It Matters
 
-Bank statements hide more than they show. Recurring subscriptions, everyday purchases, and hidden spending patterns are buried in hundreds of line items, making it difficult to understand where your money actually goes. AI Personal Finance Assistant transforms raw transaction data into clear spending insights, helping you to understand your spending in just a few seconds.
+Bank statements hide more than they show. Recurring subscriptions, everyday purchases, and hidden spending patterns are buried in hundreds of line items, making it difficult to understand where your money actually goes. AI Personal Finance Assistant transforms raw transaction data into clear spending insights, helping you to understand your expenses in just a few seconds.
 
 ## Core Features
 
@@ -16,7 +16,7 @@ Bank statements hide more than they show. Recurring subscriptions, everyday pur
 - **Turn data into a clear story.** GPT-5.6 gives each pattern a meaningful label and writes a plain-English summary.
 - **See change over time.** Compare the last month, three months, six months, or your full history without redefining the underlying patterns.
 - **Use the app anywhere.** Explore your spending patterns comfortably on a computer, tablet, or mobile phone.
-- **Keep your data private.** Files are processed in memory and never stored. AI receives only aggregated pattern evidence. Never raw transaction history.
+- **Keep your data private.** Files are processed in memory and never stored. GPT-5.6 receives only aggregated pattern evidence, never raw transaction history.
 
 ## Quick Start
 
@@ -49,7 +49,7 @@ MOCK_LLM=true uv run pytest tests/test_llm.py::test_summary_with_question_reject
 
 Visit **[your-ai-personal-finance-assistant.streamlit.app](https://your-ai-personal-finance-assistant.streamlit.app)**. The app redeploys automatically when changes are pushed to `main`. Its `OPENAI_API_KEY` is securely configured in Streamlit Cloud Secrets.
 
-## How Codex Contributed to The Final Result
+## How Codex Contributed to the Final Result
 
 | Area | Contribution |
 |---|---|
@@ -58,7 +58,7 @@ Visit **[your-ai-personal-finance-assistant.streamlit.app](https://your-ai-perso
 | **Accuracy & consistency** | Codex tracked changes across code and documentation, keeping updates synchronized, and reducing the risk of inconsistencies as the project evolved |
 | **App design** | Codex supported continuous design iteration across the dashboard layout, charts, responsive desktop/mobile experience |
 | **Demo data** | Codex helped to create a realistic demo dataset to showcase features without using sensitive data |
-| **Project delivery** | Codex helped to prepare the README, licence, repository structure, etc |
+| **Project delivery** | Codex helped to prepare the README, license, repository structure, etc. |
 
 ## How GPT-5.6 Shaped the Product
 
@@ -70,7 +70,7 @@ Visit **[your-ai-personal-finance-assistant.streamlit.app](https://your-ai-perso
 | **Currency-aware results** | GPT-5.6 uses the currency detected from the uploaded statement so amounts are presented in the user’s original currency |
 | **Natural merchant names** | GPT-5.6 makes merchant references human-friendly instead of repeating raw bank-statement descriptions |
 
-## 📄 License
+## License
 
 Copyright © 2026 Olga Aksenova.
 
